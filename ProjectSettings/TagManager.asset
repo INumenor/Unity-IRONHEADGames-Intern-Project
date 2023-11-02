@@ -3,12 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - InteractiveUI
+  - InvisibleObject
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - InvisibleObject
   - Water
   - UI
   - 
