@@ -10,5 +10,7 @@ public class NameInput : MonoBehaviour
     public void InputName(string sName)
     {
         text.text = sName;
+        PlayerPrefs.SetString("PlayerName", sName);
+        PlayerPrefs.Save();
     }
 }
