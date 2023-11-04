@@ -33,8 +33,8 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     {
 
 
-       
-        //StartSharedSession();
+
+        StartSharedSession("1234");
 
     }
     public async void StartSharedSession(string SessionName = "")
