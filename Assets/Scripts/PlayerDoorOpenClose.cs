@@ -7,8 +7,8 @@ public class PlayerDoorOpenClose : NetworkBehaviour
 {
     [SerializeField] public Animator animator;
 
-    [Networked] public NetworkBool isOpenDoor { get; set; }
-
+    [Networked(OnChanged = nameof(DoorOpenClose))] public NetworkBool isOpenDoor { get; set; }
+    static bool isOpenCloseDoor = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +16,7 @@ public class PlayerDoorOpenClose : NetworkBehaviour
         {
             //animator.SetTrigger("isDoorOpen");
             isOpenDoor = true;
-            Rpc_DoorOpenClose(isOpenDoor);
+            Rpc_SetOpenDoor(isOpenDoor);
         }
     }
 
@@ -27,12 +27,16 @@ public class PlayerDoorOpenClose : NetworkBehaviour
         {
             //animator.SetTrigger("isDoorClose");
             isOpenDoor = false;
-            Rpc_DoorOpenClose(isOpenDoor);
+            Rpc_SetOpenDoor(isOpenDoor);
         }
     }
 
-    [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority)]
-    public void Rpc_DoorOpenClose(NetworkBool isOpen, RpcInfo info = default)
+    public static void DoorOpenClose(Changed<PlayerDoorOpenClose> changed)
+    {
+        changed.Behaviour.DoorOpenClose(isOpenCloseDoor);
+    }
+
+    private void DoorOpenClose(bool isOpen)
     {
         if (isOpenDoor)
         {
@@ -42,5 +46,12 @@ public class PlayerDoorOpenClose : NetworkBehaviour
         {
             this.animator.SetTrigger("isDoorClose");
         }
+
+    }
+
+    [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority)]
+    public void Rpc_SetOpenDoor(bool isOpenDoor, RpcInfo info = default)
+    {
+        this.isOpenDoor = isOpenDoor;
     }
 }
