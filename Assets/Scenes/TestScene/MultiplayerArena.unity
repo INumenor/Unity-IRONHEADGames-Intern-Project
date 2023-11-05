@@ -179,16 +179,21 @@ PrefabInstance:
       propertyPath: SyncSettings
       value: 79
       objectReference: {fileID: 0}
+    - target: {fileID: 3965292499791512316, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
+      propertyPath: StateHashes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8532026284745386873, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3965292499791512316, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8532026284745386873, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
-      insertIndex: 4
+      insertIndex: -1
       addedObject: {fileID: 227746536}
     - targetCorrespondingSourceObject: {fileID: 8532026284745386873, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
       insertIndex: -1
@@ -199,17 +204,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8532026284745386873, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
   m_PrefabInstance: {fileID: 227746532}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &227746534 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3965292499791512316, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
-  m_PrefabInstance: {fileID: 227746532}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227746533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 506319458, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &227746535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8216695531239844147, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
@@ -237,7 +231,7 @@ MonoBehaviour:
     RawGuidValue: 0f3847797ede4a8eb6e1caf75e6a36f1
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 227746534}
+  - {fileID: 1657951612}
   - {fileID: 227746537}
   SimulationBehaviours: []
 --- !u!114 &227746537
@@ -255,7 +249,7 @@ MonoBehaviour:
   _interpolationDataSource: 0
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 227746535}
-  InterpolateErrorCorrection: 1
+  InterpolateErrorCorrection: 0
   InterpolatedErrorCorrectionSettings:
     MinRate: 3.3
     MaxRate: 10
@@ -641,6 +635,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c9e5379a46f4114da7e58a4409b9313, type: 3}
+--- !u!114 &1657951612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7289660073595332542, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
+  m_PrefabInstance: {fileID: 227746532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227746533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c504556f83ef94f80ae387d7776ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1851828851223115
 MeshRenderer:
   m_ObjectHideFlags: 0
