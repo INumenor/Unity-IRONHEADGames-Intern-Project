@@ -178,8 +178,88 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8532026284745386873, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 227746536}
+    - targetCorrespondingSourceObject: {fileID: 8532026284745386873, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 227746535}
   m_SourcePrefab: {fileID: 100100000, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
+--- !u!1 &227746533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8532026284745386873, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
+  m_PrefabInstance: {fileID: 227746532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &227746534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3965292499791512316, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
+  m_PrefabInstance: {fileID: 227746532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227746533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 506319458, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &227746535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227746533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  InterpolationSpace: 0
+  InterpolationTarget: {fileID: 227746537}
+  InterpolateErrorCorrection: 1
+  InterpolatedErrorCorrectionSettings:
+    MinRate: 3.3
+    MaxRate: 10
+    PosBlendStart: 0.25
+    PosBlendEnd: 1
+    PosMinCorrection: 0.025
+    PosTeleportDistance: 2
+    RotBlendStart: 0.1
+    RotBlendEnd: 0.5
+    RotTeleportRadians: 1.5
+  UseLegacySharedModeInterpolation: 0
+  TargetInterpolationDelay: 0.03
+--- !u!114 &227746536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227746533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2561
+  NetworkGuid:
+    RawGuidValue: 0f3847797ede4a8eb6e1caf75e6a36f1
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 227746535}
+  - {fileID: 227746534}
+  SimulationBehaviours: []
+--- !u!4 &227746537 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1929256880576742293, guid: e727f507b2ac43544bf0a2625dddc54f, type: 3}
+  m_PrefabInstance: {fileID: 227746532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &484347450
 GameObject:
   m_ObjectHideFlags: 0
