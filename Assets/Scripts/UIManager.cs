@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
 
     public void CreateSession()
     {
-        NetworkManager.Instance.StartSharedSession();
+        //NetworkManager.Instance.StartSharedSession();
     }
     public void JoinSession()
     {
