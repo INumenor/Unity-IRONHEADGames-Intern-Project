@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8216695531239844147}
   - component: {fileID: 7900035605116862400}
   - component: {fileID: 2102287437030240110}
+  - component: {fileID: 7465572649222409663}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7465572649222409663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093153763397258161}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.3144403}
+  m_Center: {x: 0, y: 0, z: -0.10082438}
 --- !u!1 &2867451893959817350
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,8 +133,8 @@ Transform:
   m_GameObject: {fileID: 2867451893959817350}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.598, y: 0, z: 0}
-  m_LocalScale: {x: 0.20725, y: 1, z: 0.107395366}
+  m_LocalPosition: {x: -3.981, y: 0, z: 0}
+  m_LocalScale: {x: 7.0211606, y: 1, z: 0.107395366}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1929256880576742293}
@@ -216,8 +238,8 @@ Transform:
   m_GameObject: {fileID: 8194728237413358418}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.599, y: 0, z: 0}
-  m_LocalScale: {x: 0.20725, y: 1, z: 0.107395366}
+  m_LocalPosition: {x: 4.778, y: 0, z: 0}
+  m_LocalScale: {x: 8.614498, y: 1, z: 0.107395366}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1929256880576742293}
@@ -305,6 +327,7 @@ GameObject:
   - component: {fileID: 4737154910563310470}
   - component: {fileID: 7718968732318579883}
   - component: {fileID: 7289660073595332542}
+  - component: {fileID: 3965292499791512316}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -322,7 +345,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.0068, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8216695531239844147}
@@ -385,3 +408,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4737154910563310470}
+--- !u!114 &3965292499791512316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8532026284745386873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 506319458, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  Animator: {fileID: 4737154910563310470}
+  TotalWords: 1
+  SyncSettings: 79
+  FloatAccuracy:
+    _value: 0
+    _inverse: 0
+    _hash: -814817977
+  TimeAccuracy:
+    _value: 0
+    _inverse: 0
+    _hash: 1061325578
+  WeightAccuracy:
+    _value: 0
+    _inverse: 0
+    _hash: -814817977
+  StateHashes: 00000000d4d2bdeace438700a93d4a4342fec2be958341e27e40c91f
+  TriggerHashes: 0000000061b5c988cd0e23f8

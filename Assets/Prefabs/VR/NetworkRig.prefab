@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7712608468477747947}
   m_Layer: 0
   m_Name: NetworkRig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,10 +373,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1984363053095503593}
-  - component: {fileID: 6828368873806945236}
   m_Layer: 0
   m_Name: RemotePlayer
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -400,29 +399,6 @@ Transform:
   - {fileID: 1265222786481429774}
   m_Father: {fileID: 6583085572875522050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &6828368873806945236
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326000462551765584}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4
-  m_Height: 1.56
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!1 &1980217173277556734
 GameObject:
   m_ObjectHideFlags: 0
