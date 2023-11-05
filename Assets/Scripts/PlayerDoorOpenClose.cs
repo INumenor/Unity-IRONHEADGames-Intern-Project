@@ -49,7 +49,7 @@ public class PlayerDoorOpenClose : NetworkBehaviour
 
     }
 
-    [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority)]
+    [Rpc(RpcSources.All, RpcTargets.All)]
     public void Rpc_SetOpenDoor(bool isOpenDoor, RpcInfo info = default)
     {
         this.isOpenDoor = isOpenDoor;
