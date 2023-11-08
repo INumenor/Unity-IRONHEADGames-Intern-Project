@@ -42,7 +42,7 @@ public class BallOwner : NetworkBehaviour
         Debug.Log(ownerPlayer+" transferrrowneerrr");
         //ball.RequestStateAuthority();
 
-        ball.AssignInputAuthority(ownerPlayer);
+       
        
     }
     
@@ -51,8 +51,8 @@ public class BallOwner : NetworkBehaviour
     {
         Debug.Log(ownerPlayer+" prcccccc owner");
         this.ownerPlayer = ownerPlayer;
-    
-      
+        ball.AssignInputAuthority(ownerPlayer);
+
 
     }
   
