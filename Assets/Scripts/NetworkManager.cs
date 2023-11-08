@@ -15,7 +15,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
     [SerializeField]
     private GameObject _runnerPrefab;
-
+    int iFlag = 0;
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -31,32 +31,32 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     // Start is called before the first frame update
     private void Start()
     {
-
-
-
-        StartSharedSession("1234");
-
+        //StartSharedSession("1234");
     }
     public async void StartSharedSession(string SessionName = "")
     {
-        if(SessionName == "")
+        if (iFlag == 0)
         {
-            SessionName = GenereateSessionCode();
-        }
-        else
-        {
-            if(SessionName.Length != 4)
+            iFlag = 1;
+            if (SessionName == "")
             {
-                Debug.LogError("Wrong SEssion Name");
-                return;
+                SessionName = GenereateSessionCode();
             }
+            else
+            {
+                if(SessionName.Length != 4)
+                {
+                    Debug.LogError("Wrong SEssion Name");
+                    return;
+                }
+            }
+            //Create Runner
+            CreateRunner();
+            //Load Scene
+            await LoadScene();
+            //ConnectSession
+            await Connect(SessionName);
         }
-        //Create Runner
-        CreateRunner();
-        //Load Scene
-        await LoadScene();
-        //ConnectSession
-        await Connect(SessionName);
     }
     public async Task LoadScene()
     {
@@ -89,7 +89,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
         if (result.Ok)
         {
-            Debug.Log("StartGame successfull");
+            Debug.Log("StartGame successfull"+SessionName);
         }
         else
         {
