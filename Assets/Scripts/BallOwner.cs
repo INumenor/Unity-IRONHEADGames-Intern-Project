@@ -27,8 +27,9 @@ public class BallOwner : NetworkBehaviour
     public void BallUngrabbed()
     {
 
-        ball.RemoveInputAuthority();
+      //  ball.RemoveInputAuthority();
         ownerPlayer = -1;
+        Rpc_BallOwner(ownerPlayer);
        
     }
     public static void TransferOwner(Changed<BallOwner> changed)
