@@ -701,6 +701,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ChangeColor",
+                    "type": "Button",
+                    "id": "9d3ba748-d29d-4138-8fc8-450034ecbf11",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -844,6 +853,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "UI Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7756e4f8-f9ea-4a49-9910-c343a4b87130",
+                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "ChangeColor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
