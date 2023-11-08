@@ -14,16 +14,19 @@ public class BallOwner : NetworkBehaviour
     public void Update()
     {
         Debug.Log("inputtttttttttttttttt" + ball.HasStateAuthority);
+       
     }
     public void BallGrabbed()
     {
       
         Rpc_BallOwner(Runner.LocalPlayer);
-       
+        TransferOwner();
+        
     }
     public void BallUngrabbed()
     {
-        ownerPlayer = -1;
+       // ball.ReleaseStateAuthority();
+        Rpc_BallOwner(-1);
     }
     public static void TransferOwner(Changed<BallOwner> changed)
     {
@@ -31,6 +34,7 @@ public class BallOwner : NetworkBehaviour
     }
     private void TransferOwner()
     {
+        
         ball.RequestStateAuthority();
     }
     
