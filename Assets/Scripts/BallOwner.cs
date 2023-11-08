@@ -20,8 +20,8 @@ public class BallOwner : NetworkBehaviour
     public void BallGrabbed()
     {
         ownerPlayer = Runner.LocalPlayer;
-        Rpc_BallOwner(Runner.LocalPlayer);
-        TransferOwner();
+        Rpc_BallOwner(ownerPlayer);
+        //TransferOwner();
         
     }
     public void BallUngrabbed()
@@ -37,20 +37,20 @@ public class BallOwner : NetworkBehaviour
     }
     private void TransferOwner()
     {
-        Debug.Log("gelmiþem");
-        Debug.Log(ownerPlayer);
-        ball.RequestStateAuthority();
+      
+        Debug.Log(ownerPlayer+" transferrrowneerrr");
+        //ball.RequestStateAuthority();
 
-        //ball.AssignInputAuthority(ownerPlayer);
+        ball.AssignInputAuthority(ownerPlayer);
        
     }
     
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void Rpc_BallOwner(PlayerRef ownerplayer, RpcInfo info = default)
     {
-
-        //this.ownerPlayer = ownerPlayer;
-        Debug.Log("deðiþmiyorum");
+        Debug.Log(ownerPlayer+" prcccccc owner");
+        this.ownerPlayer = ownerPlayer;
+    
       
 
     }
