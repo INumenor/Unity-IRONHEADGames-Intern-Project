@@ -52,14 +52,16 @@ public class BallOwner : NetworkBehaviour
         Debug.Log(ownerPlayer+" prcccccc owner");
         this.ownerPlayer = ownerPlayer;
         // ball.AssignInputAuthority(ownerPlayer);
+        ball.RequestStateAuthority();
         if (ownerPlayer==PlayerRef.None)
         {
-            Debug.Log("RELEASE");
+            Debug.Log("Remove");
             ball.RemoveInputAuthority();
+
         }
         else
         {
-            Debug.Log("REQUEST");
+            Debug.Log("assign");
             ball.AssignInputAuthority(ownerplayer);
         }
 
