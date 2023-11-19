@@ -30,6 +30,7 @@ public class Authority : NetworkBehaviour
     public async void TakeAuthority(PlayerRef playerRef)
     {
         await Object.WaitforStateAuthority();
+        Debug.Log(Object.InputAuthority);
         if (Object.HasStateAuthority)
         {
             currentHolder = playerRef;
@@ -37,7 +38,7 @@ public class Authority : NetworkBehaviour
     }
     public void grab()
     {
-        Interact(transform,currentHolder);
+        Interact(holdingTransform,currentHolder);
     }
     public void Interact(Transform targetpoint, PlayerRef playerRef)
     {
@@ -45,9 +46,10 @@ public class Authority : NetworkBehaviour
     }
     public Transform FindHolderCharachter(PlayerRef playerRef)
     {
+        Debug.Log(playerRef);
         
          return NetworkManager.Instance.SessionRunner.GetPlayerObject(playerRef).transform;
-       
+        Debug.Log(playerRef);
     }
 
 }

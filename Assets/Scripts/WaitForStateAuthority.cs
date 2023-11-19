@@ -10,6 +10,7 @@ public static class WaitForStateAuthority
     {
         float waitStartTime = Time.time;
         o.RequestStateAuthority();
+        Debug.Log(o.HasStateAuthority);
         while (!o.HasStateAuthority && (Time.time - waitStartTime) < maxWaitTime)
         {
             await System.Threading.Tasks.Task.Delay(1);
