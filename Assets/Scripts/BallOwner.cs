@@ -10,7 +10,7 @@ public class BallOwner : NetworkBehaviour
 {
    public NetworkObject player;
    // [SerializeField] Transform holdTransform;
-    [Networked(OnChanged = nameof(TransferOwner))] public PlayerRef playerRef { get; set; }
+    [Networked(OnChanged = nameof(TransferOwner))] public PlayerRef currentHolder { get; set; }
 
     public void Update()
     {
@@ -40,6 +40,7 @@ public class BallOwner : NetworkBehaviour
        player.RequestStateAuthority();
         if (player.HasStateAuthority)
         {
+            
             Debug.Log(player.StateAuthority);
         }
        
