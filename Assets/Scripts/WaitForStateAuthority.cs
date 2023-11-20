@@ -1,21 +1,23 @@
-using Fusion;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
+using Fusion;
+using System.Threading.Tasks;
 
-public static class WaitForStateAuthority 
+public static class SharedAuthorityExtensions
 {
-    public static async Task<bool> WaitforStateAuthority(this NetworkObject o, float maxWaitTime = 8)
+    /**
+        * Request state authority and wait for it to be received
+        * Relevant in shared topology only
+        */
+    public static async Task<bool> WaitForStateAuthority(this NetworkObject o, float maxWaitTime = 8)
     {
         float waitStartTime = Time.time;
         o.RequestStateAuthority();
-        Debug.Log(o.HasStateAuthority);
         while (!o.HasStateAuthority && (Time.time - waitStartTime) < maxWaitTime)
         {
             await System.Threading.Tasks.Task.Delay(1);
         }
         return o.HasStateAuthority;
-    
     }
 }

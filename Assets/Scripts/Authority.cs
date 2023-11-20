@@ -29,7 +29,7 @@ public class Authority : NetworkBehaviour
     //}
     public async void TakeAuthority()
     {
-        await Object.WaitforStateAuthority();
+        await Object.WaitForStateAuthority();
         Debug.Log(Object.InputAuthority);
         //if (Object.HasStateAuthority)
         //{
