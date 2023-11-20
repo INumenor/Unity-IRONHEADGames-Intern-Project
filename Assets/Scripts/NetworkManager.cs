@@ -31,7 +31,12 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     // Start is called before the first frame update
     private void Start()
     {
-        //StartSharedSession("1234");
+        StartSharedSession("1234");
+    }
+    [ContextMenu("StartDebugSession")]
+    public void DebugStart()
+    {
+        StartSharedSession("1234");
     }
     public async void StartSharedSession(string SessionName = "")
     {

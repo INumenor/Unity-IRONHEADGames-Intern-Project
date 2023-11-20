@@ -27,22 +27,24 @@ public class Authority : NetworkBehaviour
     {
         changed.Behaviour.holdingTransform = changed.Behaviour.FindHolderCharachter(changed.Behaviour.currentHolder);
     }
-    public async void TakeAuthority(PlayerRef playerRef)
+    public async void TakeAuthority()
     {
         await Object.WaitforStateAuthority();
         Debug.Log(Object.InputAuthority);
         if (Object.HasStateAuthority)
         {
-            currentHolder = playerRef;
+            currentHolder = Runner.LocalPlayer;
         }
     }
+    [ContextMenu("Grab")]
     public void grab()
     {
-        Interact(holdingTransform,currentHolder);
+     
+        Interact();
     }
-    public void Interact(Transform targetpoint, PlayerRef playerRef)
+    public void Interact()
     {
-        TakeAuthority(playerRef);
+        TakeAuthority();
     }
     public Transform FindHolderCharachter(PlayerRef playerRef)
     {
