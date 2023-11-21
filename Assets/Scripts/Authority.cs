@@ -12,19 +12,41 @@ public class Authority : NetworkBehaviour
     //public bool IsInteractable => isInteractable;
    // [Networked(OnChanged =nameof(GetHolderCharachter))] public PlayerRef currentHolder { get; set; }
     public bool isGrabbed=false;
-    [SerializeField] Transform holdingTransform;
+    string LeftAndRightHand = null;
+    [SerializeField] Transform LeftholdingTransform;
+    [SerializeField] Transform RightholdingTransform;
     public override void FixedUpdateNetwork()
     {
         if (!Object.HasStateAuthority) return;
 
         if (!isGrabbed) return;
                
-        transform.position = holdingTransform.position;
+        if(LeftAndRightHand == "Left")
+        {
+            transform.position = LeftholdingTransform.position;
+        }
+        else if(LeftAndRightHand == "Left")
+        {
+            transform.position = RightholdingTransform.position;
+        }
+       
     }
     //public static void GetHolderCharachter(Changed<Authority> changed)
     //{
     //    changed.Behaviour.holdingTransform = changed.Behaviour.FindHolderCharachter(changed.Behaviour.currentHolder);
     //}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("LeftHand"))
+        {
+            LeftAndRightHand = "Left";
+        }
+        else if(other.CompareTag("RightHand"))
+        {
+            LeftAndRightHand = "Right";
+        }
+    }
     public async void TakeAuthority()
     {
         await Object.WaitForStateAuthority();
@@ -39,13 +61,13 @@ public class Authority : NetworkBehaviour
     [ContextMenu("Grab")]
     public void grab()
     {
-       
         Interact();
     }
     public void Ungrabbed()
     {
         isGrabbed = false;
         this.Object.GetComponent<Rigidbody>().isKinematic = false;
+        LeftAndRightHand = null;
     }
     public void Interact()
     {

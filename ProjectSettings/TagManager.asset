@@ -6,6 +6,8 @@ TagManager:
   tags:
   - InteractiveUI
   - InvisibleObject
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX
