@@ -2,40 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
+using TMPro;
+using Unity.VisualScripting;
+
 public class Timer : NetworkBehaviour
 {
-    [Networked] private TickTimer life { get; set; }
-
-    public void Start()
+    [SerializeField] TextMeshProUGUI timertext;
+    [SerializeField] float RemainingTime;
+    string time;
+    [Networked(OnChanged = nameof(ChangedColorChange))] public float networktime { get; set; } 
+    
+    private static void ChangedColorChange(Changed<Timer> changed)
     {
-        Init();
+        changed.Behaviour.timertext.text =changed.Behaviour.time;
     }
-    public void Init()
+    private void ChangedColorChange()
     {
-       
-        life = TickTimer.CreateFromSeconds(Runner, 5.0f);
-        Debug.Log(life+ "life");
+
+        networktime = RemainingTime;
     }
-
-    public override void FixedUpdateNetwork()
+    void Update()
     {
-
-
-        if (life.Expired(Runner))
-        {
-            
-            Debug.Log(life + " life ifin içindeki");
-            //Runner.Despawn(Object);
-        }
-
-        else
-            Debug.Log(life.RemainingTime(Runner));
         
+        RemainingTime -= Time.deltaTime;
+
+        int minutes = Mathf.FloorToInt(RemainingTime / 60);
+        int seconds = Mathf.FloorToInt(RemainingTime % 60);
+        time = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timertext.text = time;
     }
+
     public override void Spawned()
     {
-
-       // Rpc_SetPlayerName(PlayerPrefs.GetString("PlayerName"));
         base.Spawned();
     }
+    //  [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority)]
+    //public void timerchanged( RpcInfo info = default)
+    //  {
+
+    //  }
 }

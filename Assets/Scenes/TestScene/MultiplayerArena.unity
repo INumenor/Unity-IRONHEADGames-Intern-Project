@@ -2639,6 +2639,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
+  timertext: {fileID: 1412421811}
+  RemainingTime: 120
+  _networktime: 120
 --- !u!114 &7506154481420830655
 MonoBehaviour:
   m_ObjectHideFlags: 0
