@@ -11,16 +11,14 @@ public class Authority : NetworkBehaviour
     //[SerializeField] private bool isInteractable = true;
     //public bool IsInteractable => isInteractable;
    // [Networked(OnChanged =nameof(GetHolderCharachter))] public PlayerRef currentHolder { get; set; }
-    public bool isGrabbed => Object != null && holdingTransform != null;
+    public bool isGrabbed=false;
     [SerializeField] Transform holdingTransform;
     public override void FixedUpdateNetwork()
     {
         if (!Object.HasStateAuthority) return;
 
-
-      //  if (!isGrabbed) return;
+        if (!isGrabbed) return;
                
-        
         transform.position = holdingTransform.position;
     }
     //public static void GetHolderCharachter(Changed<Authority> changed)
@@ -30,6 +28,8 @@ public class Authority : NetworkBehaviour
     public async void TakeAuthority()
     {
         await Object.WaitForStateAuthority();
+        isGrabbed = true;
+        this.Object.GetComponent<Rigidbody>().isKinematic = true;
         Debug.Log(Object.InputAuthority);
         //if (Object.HasStateAuthority)
         //{
@@ -39,8 +39,13 @@ public class Authority : NetworkBehaviour
     [ContextMenu("Grab")]
     public void grab()
     {
-     
+       
         Interact();
+    }
+    public void Ungrabbed()
+    {
+        isGrabbed = false;
+        this.Object.GetComponent<Rigidbody>().isKinematic = false;
     }
     public void Interact()
     {
